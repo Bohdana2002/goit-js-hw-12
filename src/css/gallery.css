@@ -1,0 +1,41 @@
+.gallery-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.gallery-item {
+  flex-basis: calc((100% - 48px) / 3);
+border: 1px solid #808080;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+}
+
+.field {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: auto;
+}
+.statistics {
+  display: flex;
+  flex-direction: column;
+}
+.titles {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+.numbers {
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
