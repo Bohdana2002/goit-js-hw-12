@@ -1,10 +1,8 @@
 import { getImagesByQuery } from './pixabay-api';
+import { refs } from './refs';
 
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-
-const gallery = document.querySelector('.gallery');
-const preloader = document.querySelector('.js-loader');
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',

@@ -1,20 +1,4 @@
-import axios from 'axios';
-
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
-
-import { refs } from './refs';
-
-import { getImagesByQuery } from './js/pixabay-api';
-import {
-  clearGallery,
-  createGallery,
-  hideLoader,
-  showLoader,
-} from './js/render-functions';
-
-let page = 1;
-let query = '';
+import { hideLoader } from './src/js/render-functions';
 
 export const onFormSubmit = async event => {
   try {
@@ -41,6 +25,3 @@ export const onFormSubmit = async event => {
     hideLoader();
   }
 };
-
-hideLoader();
-refs.form.addEventListener('submit', onFormSubmit);
