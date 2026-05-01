@@ -5,7 +5,7 @@ import { refs } from './refs';
 const API = '55620354-ac6ed1e79a2ffd89ad6e48679';
 const URL = 'https://pixabay.com/api/';
 
-export async function getImagesByQuery(query, page) {
+export const getImagesByQuery = async (query, page) => {
   const params = {
     key: API,
     q: query,
@@ -17,4 +17,4 @@ export async function getImagesByQuery(query, page) {
   };
   const { data } = await axios.get(URL, { params });
   return data;
-}
+};

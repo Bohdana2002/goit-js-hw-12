@@ -49,16 +49,16 @@ export function createGallery(images) {
 </li>`
     )
     .join('');
-  gallery.insertAdjacentHTML('beforeend', markup);
+  refs.gallery.insertAdjacentHTML('beforeend', markup);
 
   lightbox.refresh();
 }
 export function clearGallery() {
-  gallery.innerHTML = '';
+  refs.gallery.innerHTML = '';
 }
 export function showLoader() {
-  preloader.classList.add('is-active');
+  refs.preloader.classList.add('is-active');
 }
 export function hideLoader() {
-  preloader.classList.remove('is-active');
+  refs.preloader.classList.remove('is-active');
 }

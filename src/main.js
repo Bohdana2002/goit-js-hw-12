@@ -3,7 +3,7 @@ import axios from 'axios';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-import { refs } from './refs';
+import { refs } from './js/refs';
 
 import { getImagesByQuery } from './js/pixabay-api';
 import {
