@@ -84,3 +84,12 @@
     transform: rotate(360deg);
   }
 }
+.js-load-more {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+.js-load-more.is-hidden {
+  display: none;
+}

@@ -62,3 +62,9 @@ export function showLoader() {
 export function hideLoader() {
   refs.preloader.classList.remove('is-active');
 }
+export function showLoadMoreButton() {
+  refs.loadMoreBtn.classList.remove('is-hidden');
+}
+export function hideLoadMoreButton() {
+  refs.loadMoreBtn.classList.add('is-hidden');
+}
