@@ -20,15 +20,18 @@ let query = '';
 const onLoadMoreBtnClick = async event => {
   try {
     page++;
+    hideLoadMoreButton();
     showLoader();
     const data = await getImagesByQuery(query, page);
     createGallery(data.hits);
     const firstCard = document.querySelector('.gallery-item');
-    const cardHeight = firstCard.getBoundingClientRect().height;
-    window.scrollBy({
-      top: cardHeight * 2,
-      behavior: 'smooth',
-    });
+    if (firstCard) {
+      const cardHeight = firstCard.getBoundingClientRect().height;
+      window.scrollBy({
+        top: cardHeight * 2,
+        behavior: 'smooth',
+      });
+    }
     const totalPages = Math.ceil(data.totalHits / 15);
     if (page >= totalPages) {
       hideLoadMoreButton();
@@ -38,8 +41,13 @@ const onLoadMoreBtnClick = async event => {
       });
       return;
     }
+    showLoadMoreButton();
   } catch (error) {
     console.log(error);
+    iziToast.error({
+      position: 'topRight',
+      message: 'Something went wrong! Please try again.',
+    });
   } finally {
     hideLoader();
   }
@@ -69,9 +77,18 @@ export const onFormSubmit = async event => {
     const totalPages = Math.ceil(data.totalHits / 15);
     if (totalPages > 1) {
       showLoadMoreButton();
+    } else {
+      iziToast.error({
+        position: 'topRight',
+        message: "We're sorry, but you've reached the end of search results.",
+      });
     }
   } catch (err) {
     console.log(err);
+    iziToast.error({
+      position: 'topRight',
+      message: 'Something went wrong! Please try again.',
+    });
   } finally {
     hideLoader();
   }
